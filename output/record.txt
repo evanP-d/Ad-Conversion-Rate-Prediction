@@ -1,0 +1,153 @@
+PS D:\desk top\1\AdvertisingConversionRate> D:\anaconda\envs\data_ana_project_env\python main.py --shap
+  Duplicated rows: 57423
+row after dedup: 3692105   (57423 removed)
+  Drop conversionTime column
+(3692105, 22)
+  Before optimization: 676.04 MB
+  After optimization: 186.62 MB
+ Train : (2584473, 24)，Valid : (1107632, 24)
+ Train cvr : 0.025771211384293818 ,Valid cvr : 0.024065754691088737
+  Decomposed hometown -> hometown_province + hometown_city
+  Decomposed residence -> residence_province + residence_city
+  Decomposed appCategory -> first_category + second_category
+  Fold 1/5... 2/5... 3/5... 4/5... Fold 5/5 done
+
+ Total features: 56 29 categorical, 27 numeric
+final train: (2584473, 58)  ,valid: (1107632, 58)
+
+  Skipping Optuna (use --optuna to enable)
+29 categorical features
+0:      test: 0.7550701 best: 0.7550701 (0)     total: 11.6s    remaining: 1h 55m 23s
+100:    test: 0.7946090 best: 0.7946090 (100)   total: 15m 5s   remaining: 1h 14m 31s
+200:    test: 0.7953073 best: 0.7953538 (177)   total: 29m 21s  remaining: 58m 17s
+Stopped by overfitting detector  (50 iterations wait)
+
+bestTest = 0.7955515795
+bestIteration = 235
+
+Shrink model to first 236 iterations.
+ best auc: 0.7956(iter 235)
+
+  Model saved to: D:\desk top\1\AdvertisingConversionRate\output\catboost_model.cbm
+  AUC: 0.7956
+  PR AUC: 0.1128
+  Best Threshold: 0.7900
+  F1: 0.1880
+  Precision: 0.1734
+  Recall: 0.2055
+  Confusion Matrix:
+  TN: 1,054,867, FP = 26,112
+  FN: 21,177, TP = 5,476
+  Curves saved to: D:\desk top\1\AdvertisingConversionRate\output\catboost_curves.png
+  Feature Importances:CatBoost
+  Saved to D:\desk top\1\AdvertisingConversionRate\output\feature_importance.csv
+
+  Top 30 features:
+                          feature  importance
+                    positionID_te   13.986047
+     appPlatform_x_connectionType   13.099264
+                           userID   10.803982
+                        sitesetID    3.232080
+                  second_category    3.121374
+                              age    2.797883
+                       positionID    2.765587
+             campaignID_log_count    2.560201
+                           gender    2.557547
+                   connectionType    2.265153
+                       campaignID    2.224710
+                       click_hour    1.836201
+                          adID_te    1.834364
+                 campaignID_count    1.823067
+                  appID_log_count    1.587802
+                   residence_city    1.552995
+                      appPlatform    1.520955
+                   first_category    1.486913
+                             adID    1.400243
+                    creativeID_te    1.373280
+                      appID_count    1.372114
+connectionType_x_telecomsOperator    1.368206
+             positionID_log_count    1.361903
+                       creativeID    1.298154
+           advertiserID_log_count    1.246382
+          user_unique_apps_before    1.229364
+                            appID    1.164870
+         positionType_x_sitesetID    1.126067
+    advertiserID_x_first_category    1.095896
+                  advertiserID_te    1.052252
+  Plot saved to D:\desk top\1\AdvertisingConversionRate\output\catboost_feature_importance.png
+Training until validation scores don't improve for 50 rounds
+[100]   train's auc: 0.81797    valid's auc: 0.789031
+[200]   train's auc: 0.825394   valid's auc: 0.790252
+[300]   train's auc: 0.830643   valid's auc: 0.790386
+Early stopping, best iteration is:
+[269]   train's auc: 0.829087   valid's auc: 0.790407
+best auc: 0.7904 (iter 269)
+  AUC: 0.7904
+  PR AUC: 0.1064
+  Best Threshold: 0.6412
+  F1: 0.1822
+  Precision: 0.1610
+  Recall: 0.2097
+  Confusion Matrix:
+  TN: 1,051,858, FP = 29,121
+  FN: 21,063, TP = 5,590
+  Curves saved to: D:\desk top\1\AdvertisingConversionRate\output\lightgbm_curves.png
+  Feature Importances:LightGBM
+  Saved to D:\desk top\1\AdvertisingConversionRate\output\feature_importance.csv
+
+  Top 30 features:
+                          feature   importance
+                       positionID 3.854777e+06
+                       creativeID 3.728755e+06
+                    positionID_te 2.674421e+06
+                     advertiserID 1.605951e+06
+                       campaignID 1.369098e+06
+     appPlatform_x_connectionType 1.354290e+06
+                   residence_city 9.694107e+05
+                    hometown_city 8.301571e+05
+                             adID 3.573783e+05
+         user_action_count_before 2.202821e+05
+                            appID 1.022457e+05
+                              age 8.917513e+04
+    advertiserID_x_first_category 7.187816e+04
+                 positionID_count 7.041073e+04
+                           gender 7.025650e+04
+                       click_hour 4.612427e+04
+connectionType_x_telecomsOperator 4.576249e+04
+    positionType_x_first_category 3.675171e+04
+             creativeID_log_count 3.509359e+04
+                        clickTime 2.947857e+04
+                    creativeID_te 2.662851e+04
+          user_unique_apps_before 2.215351e+04
+                 campaignID_count 2.198240e+04
+                        userID_te 2.070720e+04
+                       adID_count 1.799158e+04
+                 creativeID_count 1.181732e+04
+                  advertiserID_te 1.171207e+04
+             positionID_log_count 9.957048e+03
+                        education 8.494567e+03
+                   click_hour_sin 7.131687e+03
+  Plot saved to D:\desk top\1\AdvertisingConversionRate\output\lightgbm_feature_importance.png
+  CatBoost AUC: 0.7956, F1: 0.1880, PR-AUC: 0.1128
+  LightGBM AUC: 0.7904, F1: 0.1822, PR-AUC: 0.1064
+  Computing SHAP values on 5000 samples...
+  SHAP summary plot saved to D:\desk top\1\AdvertisingConversionRate\output\catboost_shap_summary.png
+  SHAP importance saved to D:\desk top\1\AdvertisingConversionRate\output\catboost_shap_importance.csv
+
+  Top 10 SHAP features:
+                     feature  shap_importance
+               positionID_te         0.374993
+appPlatform_x_connectionType         0.354538
+                      userID         0.278194
+                   sitesetID         0.087556
+                  positionID         0.069552
+               creativeID_te         0.067789
+                         age         0.064210
+              connectionType         0.060428
+                      gender         0.048465
+     user_unique_apps_before         0.045124
+  Total time:     2710s (45.2 min)
+  CatBoost AUC:   0.7956
+  CatBoost F1:    0.1880
+  CatBoost PR-AUC: 0.1128
+  Output dir:     D:\desk top\1\AdvertisingConversionRate\output

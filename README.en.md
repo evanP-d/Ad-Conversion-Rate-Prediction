@@ -150,7 +150,7 @@ Enabled via `--shap` flag. Computes SHAP values on 5,000 validation samples.
 
 ### 7. Output Files
 
-Generated in `output/` on each run (⚠️ output files are not tracked in Git; run the pipeline locally to generate):
+Generated in `output/` on each run (⚠️ only the `catboost_model.cbm` model file is not tracked in Git; run the pipeline locally to generate it; other output files are tracked in version control):
 
 | File | Description |
 |------|-------------|
