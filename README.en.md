@@ -198,7 +198,10 @@ python main.py --skip-lightgbm
 python main.py --optuna --shap --skip-lightgbm
 
 # Using conda environment Python
-/d/anaconda/envs/data_ana_project_env/python main.py --shap
+D:\anaconda\envs\data_ana_project_env\python main.py --shap
+
+# If the conda environment is set as the default PATH, simply run:
+python main.py --shap
 ```
 
 ### CLI Flags

@@ -198,7 +198,10 @@ python main.py --skip-lightgbm
 python main.py --optuna --shap --skip-lightgbm
 
 # 使用 conda 环境的 Python
-/d/anaconda/envs/data_ana_project_env/python main.py --shap
+D:\anaconda\envs\data_ana_project_env\python main.py --shap
+
+# 若已将 conda 环境配置为默认 PATH，直接执行即可
+python main.py --shap
 ```
 
 ### 参数说明
